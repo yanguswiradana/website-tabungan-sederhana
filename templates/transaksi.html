@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Transaksi
+{% endblock %}
+
+{% block body %}
+<div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold mb-4">Data Pelanggan</h1>
+    <table class="w-full border">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="py-2 px-4">No. Rekening</th>
+                <th class="py-2 px-4">Nama</th>
+                <th class="py-2 px-4">Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in list_pelanggan %}
+            <tr class="bg-white text-center">
+                <td class="py-2 px-4">{{row[4]}}</td>
+                <td class="py-2 px-4">{{row[1]}}</td>
+                <td class="py-2 px-4">
+                    <div class="">
+                        <button class="bg-gray-900 rounded p-2 mt-4 mb-4">
+                <a href="/penyetoran/{{row[0]}}"><h2 class="text-sm font-semibold text-white">Setor</h2></a>
+                        </button>
+                        <button class="bg-gray-900 rounded p-2 ">
+                <a href="/penarikan/{{row[0]}}"><h2 class="text-sm font-semibold text-white">Tarik</h2></a>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

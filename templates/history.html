@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Riwayat
+{% endblock %}
+{% block body %}
+
+<div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold mb-4">Riwayat</h1>
+    <table class="w-full border">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="py-2 px-4">No. Rekening</th>
+                <th class="py-2 px-4">Nama</th>
+                <th class="py-2 px-4">Jumlah Transaksi</th>
+                <th class="py-2 px-4">Jenis Transaksi</th>
+                <th class="py-2 px-4">Tanggal</th>
+                <th class="py-2 px-4">PIC</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in list_view_pelanggan %}
+            <tr class="bg-white text-center">
+                <td class="py-2 px-4">{{row[1]}}</td>
+                <td class="py-2 px-4">{{row[0]}}</td>
+                <td class="py-2 px-4">{{row[3]}}</td>
+                <td class="py-2 px-4">{{row[2]}}</td>
+                <td class="py-2 px-4">{{row[4]}}</td>
+                <td class="py-2 px-4">{{row[5]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

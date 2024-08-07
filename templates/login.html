@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+  rel="stylesheet" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+<script src="https://cdn.tailwindcss.com/3.3.0"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"],
+        body: ["Roboto", "sans-serif"],
+        mono: ["ui-monospace", "monospace"],
+      },
+    },
+    corePlugins: {
+      preflight: false,
+    },
+  };
+</script>
+
+    <title>Login Form</title>
+</head>
+<body class="bg-neutral-100 h-screen flex items-center justify-center">
+
+  <section class="gradient-form h-full bg-transparent-400 dark:bg-neutral-700">
+    <div class="container h-full p-10">
+        <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+            <div class="w-full">
+                <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+                    <div class="g-0 lg:flex lg:flex-wrap">
+                        <!-- Left column container-->
+                        <div class="px-4 md:px-0 lg:w-full"> <!-- Set lg:w-full to occupy full width on larger screens -->
+                            <div class="md:mx-6 md:p-12">
+                                <!-- Logo -->
+                                <div class="text-center">
+                                    <img class="mx-auto w-48"
+                                        src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                                        alt="logo" />
+                                    <h4 class="mb-12 mt-1 pb-1 text-xl font-semibold">
+                                        Login
+                                    </h4>
+                                </div>
+
+                                <form method="post" action="/login">
+                                   
+                                    <!-- Username input -->
+                                    <div class="relative mb-4" data-te-input-wrapper-init>
+                                        <input type="text"
+                                            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                            id="exampleFormControlInput1" placeholder="Username" name="username" />
+                                        <label for="exampleFormControlInput1"
+                                            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Username
+                                        </label>
+                                    </div>
+
+                                    <!-- Password input -->
+                                    <div class="relative mb-4" data-te-input-wrapper-init>
+                                        <input type="password"
+                                            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                            id="exampleFormControlInput11" placeholder="Password" name="password" />
+                                        <label for="exampleFormControlInput11"
+                                            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Password
+                                        </label>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <div class="mb-12 pb-1 pt-1 text-center">
+                                        <button
+                                            class="bg-gray-900 mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                                            type="submit" data-te-ripple-init data-te-ripple-color="light" value="login">
+                                            Log in
+                                        </button>
+                                    </div>
+                                    {% if display_error %}
+                                    <div class="alert alert-danger">
+                                        <p style="color: red;">Invalid Password/Username</p>
+                                    </div>
+                                    {% endif %}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+</body>
+</html>

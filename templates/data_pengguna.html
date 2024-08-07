@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+Data
+{% endblock %}
+
+{% block body %}
+<div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold mb-4">Data Pelanggan</h1>
+    <table class="w-full border">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="py-2 px-4">No. Rekening</th>
+                <th class="py-2 px-4">Nama</th>
+                <th class="py-2 px-4">Alamat</th>
+                <th class="py-2 px-4">Saldo</th>
+                <th class="py-2 px-4">Tlp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in list_pelanggan %}
+            <tr class="bg-white text-center">
+                <td class="py-2 px-4">{{row[4]}}</td>
+                <td class="py-2 px-4">{{row[1]}}</td>
+                <td class="py-2 px-4">{{row[2]}}</td>
+                <td class="py-2 px-4">{{row[5]}}</td>
+                <td class="py-2 px-4">{{row[3]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}
